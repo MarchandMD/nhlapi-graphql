@@ -1,4 +1,8 @@
 class NhlApiService
+  def specific_team(id)
+    get_url("/api/v1/teams/#{id}")
+  end
+
   def all_teams
     get_url("/api/v1/teams")
   end
