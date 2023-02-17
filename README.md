@@ -33,15 +33,13 @@
   <h1 align="center">nhlapi-graphql</h1>
 
   <p align="center">
-    Greenfield project creating microservice in Service-Oriented Architecture consuming 3rd party API from NHL
+  Rails API consuming 3rd party NHL API and exposing the data via a microservice using GraphQL
     <br />
-    <img src="./assets/images/nhlapi-graphql.jpg" alt="nhlapi-graphql">
+    <img src="app/assets/images/me_hockey.jpg" alt="alt_text">
     <br />
-    <a href="https://backend.turing.edu/module1/projects/nhlapi-graphql/"><strong>Explore the docs »</strong></a>
+    <a href="https://graphql.org/"><strong>Explore the GraphQL docs »</strong></a>
     <br />
     <br />
-    <a href="https://replit.com/@KurtBrusselSpro/nhlapi-graphql">View Demo</a>
-    ·
     <a href="https://github.com/marchandmd/nhlapi-graphql/issues">Report Bug</a>
     ·
     <a href="https://github.com/marchandmd/nhlapi-graphql/issues">Request Feature</a>
@@ -78,14 +76,20 @@
 
 ## About The Project
 
-Consume the nhl api using the Faraday gem, process the JSON with a Facade, and then expose the data via graphQL
+This project is a microservice built as a greenfield project. The official, undocumented NHL API is being consumed by a Service object using the Faraday gem. No API key or credentials are required.
+
+That data is then being passed through to a Facade object, where the JSON is being processed into POROs.
+
+Finally, that Facade is being used in graphQL queries. Since the NHL API doesn't permit PUT, PATCH, POST or DELETE capabilities, there will be no mutations.
+
 
 What did I learn building this:
 
-- Utilize Test-Driven Development (TDD)
-- Service-Orientation and consumption and exposure of 3rd party API
-- Create an Object-Oriented solution to a problem without being given any specifications
-- basic Vim motions
+- practicing VIM basics
+- greater understanding of graphQL Types and QueryTypes
+- TDD
+- Graphiql interface and GraphQL query structure
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -121,19 +125,34 @@ ruby v2.7.4
 
 ## Usage
 
-To be completed
+1. `cd` into the directory
+2. `rails s`
+3. Navigate to `localhost:3000/graphiql`
+4. Query the NHL API! (query format to be added to README)
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+## GraphQL Queries
+
+### Get all teams
+
+```
+{
+  teams {
+    id
+    name
+  }
+}
+```
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 <!-- ROADMAP -->
 
 ## Roadmap
 
-- [ ] Add endpoints to documentation
-- [ ] Add JSON contracts to documentation
-- [ ] Build facade for hockey service
-- [ ] Add usage to documentation
+- README
+- [ ] add additional endpoints
+
 
 See the [open issues](https://github.com/marchandmd/nhlapi-graphql/issues) for a full list of proposed features (and known issues).
 
