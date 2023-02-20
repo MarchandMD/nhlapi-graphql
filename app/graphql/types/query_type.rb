@@ -1,4 +1,5 @@
 module Types
+
   class QueryType < Types::BaseObject
     # Add `node(id: ID!) and `nodes(ids: [ID!]!)`
     include GraphQL::Types::Relay::HasNodeField
@@ -15,6 +16,14 @@ module Types
 
     def team(id:)
       HockeyFacade.new.specific_team(id)
+    end
+
+    field :team_roster, [Types::PlayerType], null: true do
+      argument :id, ID, required: true
+    end
+
+    def team_roster(id:)
+      HockeyFacade.new.team_roster(id)
     end
   end
 end
