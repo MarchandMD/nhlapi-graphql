@@ -142,9 +142,22 @@ ruby v2.7.4
   teams {
     id
     name
+    link
   }
 }
 ```
+### Get one team
+
+```
+{
+  team(id: "1") {
+    id
+    name
+    link
+  }
+}
+```
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 <!-- ROADMAP -->
 
