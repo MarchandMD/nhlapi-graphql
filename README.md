@@ -35,7 +35,7 @@
   <p align="center">
   Rails API consuming 3rd party NHL API and exposing the data via a microservice using GraphQL
     <br />
-    <img src="app/assets/images/me_hockey.jpg" alt="alt_text">
+    <img src="app/assets/images/me_hockey.jpg" alt="alt_text" width="300">
     <br />
     <a href="https://graphql.org/"><strong>Explore the GraphQL docs »</strong></a>
     <br />
