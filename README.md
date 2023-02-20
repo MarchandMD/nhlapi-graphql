@@ -157,6 +157,20 @@ ruby v2.7.4
   }
 }
 ```
+### Get one team's roster
+
+```
+{
+  teamRoster(id: "1") {
+    id
+    fullName
+    jerseyNumber
+    link
+    position
+    positionAbbreviation
+  }
+}
+```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 <!-- ROADMAP -->
@@ -165,6 +179,7 @@ ruby v2.7.4
 
 - README
 - [ ] add additional endpoints
+- [ ] add team name to the response when requesting a roster
 
 
 See the [open issues](https://github.com/marchandmd/nhlapi-graphql/issues) for a full list of proposed features (and known issues).
